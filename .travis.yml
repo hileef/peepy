@@ -1,24 +1,25 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower
+- bower --version
+- npm install phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: UBFLLsbkWSPAnR0SvNwod+2NA4JQtwZFskx1W2B7TTj7vsuKw5iK8fovO4XamDbUlJA6YvDFOIfSQLScnRefn0TN8jGDwELAE9uRztRJe+KsUp7nlRfbokrralrJwUg1eS3tFYdm2A+UNJqv9llx3apH9sp0mlJ1Wg73fa6wokd1JniXJOmx02zT90GHovmdvNm8cbctws4jmUYwCtX8KOH/jdOqvlhY1b22fKSDH8xZNiXeZMr1jWaZQ1uX4SoQB+A117xwb18pJtYpEDJTinwvWb9qmla62qVGQxVfiW+2HvrNl+/41weAF+FFrDCMuTjUvdZTpVNowzYdpPwZo+igwwoFu25cRu/1QTcgzKq5QETEttJ+/qoQ9WQikRZKYjRWbjeP0cys2Q9o+pXEff+f1zv9XEMB7vUlpsw3PYIW0AEglMEukIaXqCGOvKxTHGdc0pk76MVw2NXnkWFr7sMeo7oXNq+G5TzJjgCfQ8oiYohtLg8+MpTun8bZI88YBL8e05wGpyE3P5W7qYLLDt3CP7FvmMxi5HlAWUUg/tLfrT049lurrzhoU0ErhWZi8Qb0lYBp8o7o1z+7V53bmaeNkO/zsPYAHF8fMAzBDmfsxRn7OWsqNT9wdgSo5zbBbXo8o9UxQo9UJZww8VryBIdqAVdlJhVmHdIWrgKDWbg=
+  app: peepy
+  on:
+    repo: hileef/peepy
