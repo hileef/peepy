@@ -1,0 +1,30 @@
+{{#x-card
+  onsubmit=attrs.onsubmit
+  title='Register'
+  buttonText='REGISTER'
+}}
+
+<div class="row">
+  {{x-input
+    classNames='col s12'
+    type="email"
+    label='Email'
+  }}
+</div>
+
+<div class="row">
+  {{x-input
+    classNames='col s12'
+    type="password"
+    label='Password'
+  }}
+</div>
+
+<div class="row">
+  {{x-input
+    classNames='col s12'
+    type="password"
+    label='Confirm Password'
+  }}
+</div>
+{{/x-card}}
