@@ -2,6 +2,7 @@
   onsubmit=attrs.onsubmit
   title='Register'
   buttonText='REGISTER'
+  buttonDisabled=validations.messages.length
 }}
 
 <div class="row">
@@ -9,6 +10,8 @@
     classNames='col s12'
     type="email"
     label='Email'
+    value=model.email
+    errors=(v-get model 'email' 'messages')
   }}
 </div>
 
@@ -17,6 +20,8 @@
     classNames='col s12'
     type="password"
     label='Password'
+    value=model.password
+    errors=(v-get model 'password' 'messages')
   }}
 </div>
 
@@ -25,6 +30,8 @@
     classNames='col s12'
     type="password"
     label='Confirm Password'
+    value=model.passwordConfirmation
+    errors=(v-get model 'passwordConfirmation' 'messages')
   }}
 </div>
 {{/x-card}}

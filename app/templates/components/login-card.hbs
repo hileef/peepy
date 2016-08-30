@@ -2,6 +2,7 @@
   onsubmit=attrs.onsubmit
   title='Login'
   buttonText='LOGIN'
+  buttonDisabled=validations.messages.length
 }}
 
 <div class="row">
@@ -9,6 +10,8 @@
     classNames='col s12'
     type="email"
     label='Email'
+    value=model.email
+    errors=validations.attrs.model.email.messages
   }}
 </div>
 
@@ -17,6 +20,8 @@
     classNames='col s12'
     type="password"
     label='Password'
+    value=model.password
+    errors=validations.attrs.model.password.messages
   }}
 </div>
 {{/x-card}}
