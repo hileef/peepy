@@ -7,7 +7,11 @@ export default Ember.Route.extend({
   actions: {
     doRegister() {
       this.get('currentModel').save().then(() => {
+
         this.transitionTo('auth.login');
+        this.get('flashMessages').success('Successfully registered !');
+      }).catch((response) => {
+        this.get('flashMessages').danger(response.errors.mapBy('detail').join(', '));
       });
 
     }
