@@ -1,12 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  session: Ember.inject.service(),
   model() {
     return {email: '', password: ''};
   },
   actions: {
     doLogin() {
-      console.log('LOGIN ATTEMTPED');
+      const user = this.get('currentModel');
+      this.get('session').authenticate(
+        'authenticator:peepy', user.email, user.password
+      );
     }
   }
 });

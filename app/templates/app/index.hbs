@@ -1,0 +1,32 @@
+<div class='container'>
+  <div class ="row">
+    <div class="col s12 m8 offset-m2">
+
+      {{#x-card
+        buttontext='LOGOUT'
+        onsubmit=(route-action 'logout')
+        title='Account'
+      }}
+
+      {{#user-info as |u|}}
+        Hi, hope you're goin well, <b>{{u.email}}</b>
+      {{/user-info}}
+
+      {{/x-card}}
+
+      <div class="card">
+        <div class="card-content" >
+          <span class="card-title"> Welcome to Peepy </span>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu egestas mi. Fusce porta gravida ante. Cras blandit ultricies arcu. Vivamus euismod magna lacus, eget feugiat turpis consequat sit amet. Nullam maximus semper dapibus. Mauris interdum varius laoreet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut non odio libero. Nam vitae justo pulvinar, vestibulum urna eget, viverra dolor. In hac habitasse platea dictumst.</p>
+        </div>
+        <div class="card-action" >
+          {{link-to 'Register' 'auth.register' class="btn-flat btn-large green white-text"}}
+          {{link-to 'Login' 'auth.login' class="btn-flat btn-large blue white-text right"}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{outlet}}
