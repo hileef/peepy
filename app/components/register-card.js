@@ -1,6 +1,6 @@
 import Ember from 'ember';
-import { email, password, passwordConfirmation } from '../utils/user-vlaidations';
-import { buildValidations } from 'ember-cp-validation';
+import { email, password, passwordConfirmation } from '../utils/user-validations';
+import { buildValidations } from 'ember-cp-validations';
 
 // const { Component } = Ember;
 
