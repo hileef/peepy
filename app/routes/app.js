@@ -13,7 +13,7 @@ export default Ember.Route.extend({
 
   },
   afterModel() {
-    return fetch(`${config.DS.host}/${config.DS.namespace}/user/current`, {
+    return fetch(`${config.DS.host}/${config.DS.namespace}/users/current`, {
       type: 'GET',
       headers: {
         'Authorization': `Bearer ${this.get('session').get('session.content.authenticated.access_token')}`
