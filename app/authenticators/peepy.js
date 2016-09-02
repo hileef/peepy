@@ -3,7 +3,7 @@ import config from '../config/environment';
 
 export default OAuth2PasswordGrant.extend({
 
-  serverTokenEndPoint: `${config.DS.host}/${config.DS.namespace}/token`
+  serverTokenEndpoint: `${config.DS.host}/${config.DS.namespace}/token`
 
 
 });
