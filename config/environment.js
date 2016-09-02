@@ -42,7 +42,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    console.log('### DETECTED DEVELOPMENT ENVIRNOMENT');
   }
 
   if (environment === 'test') {
@@ -54,12 +53,10 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-    console.log('### DETECTED TESTING ENVIRNOMENT');
   }
 
   if (environment === 'production') {
     ENV.DS.host = 'https://peepy-serve.herokuapp.com';
-    console.log('### DETECTED PRODUCTION ENVIRNOMENT');
   }
 
   return ENV;
